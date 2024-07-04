@@ -1,0 +1,15 @@
+@use "../utils/variables" as var;
+@use "../utils/mixin" as mxn;
+header {
+  background-color: var.$bg-black;
+  padding: 56px 0 64px;
+  nav {
+    @include mxn.flex(center, space-between, 0px);
+    .nav-menu {
+      @include mxn.flex(center, center, 40px);
+      .nav-menu__link {
+        @include mxn.font("Open Sans", 16px, 600, 28px, var.$text-white);
+      }
+    }
+  }
+}
