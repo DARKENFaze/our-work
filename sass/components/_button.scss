@@ -6,6 +6,12 @@
   border-bottom: 1px solid $botton-color;
   @include mxn.flex($align, $justify, $gap);
 }
+@mixin butt ($botto,$padding,$radius){
+  background: $botto;
+  border: none;
+  padding:$padding ;
+  border-radius: $radius;
+}
 .lg-btn {
   background: rgba(255, 255, 255, 1);
   color: rgba(10, 38, 64, 1);
