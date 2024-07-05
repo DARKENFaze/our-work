@@ -2,12 +2,44 @@
 @use "../utils/variables" as var;
 @use "../components/button" as mxnBtn;
 @use "../layout/grid" as mxnGrid;
+.big-div{
+  background-color: var.$bg-black;
+}
 .cards {
+  p{
+    padding-top: 82px;
+    padding-bottom: 12px;
+    @include mxn.font(Open Sans,20px,400,32px, var.$text-gray);
+text-align: center;
+
+  }
+  h1{
+    @include mxn.font (Manropem,48px,400,72px,black);
+    //styleName: Headings/Text XXL;
+text-align: center;
+margin:  0 auto;
+max-width: 
+842px;
+
+  }
   .card-row {
     padding: 80px 0 185px;
     @include mxnGrid.grid(3, 100px);
+    @media (max-width:1120px){
+      @include mxnGrid.grid(2, 100px);
+      justify-content: center;
+    }
+    @media(max-width:708px){
+ @include mxnGrid.grid(1, 100px);
+display: block;
+
+    }
     .card {
+      margin:  0 auto;
       width: 300px;
+      img{
+        max-width: 300px;
+      }
       .card-body {
         padding-top: 24px;
         h6 {
@@ -30,9 +62,258 @@
             // padding-bottom: 8px;
             // border-bottom: 1px solid var.$bg-black;
             // @include mxn.flex(center, space-between, 0);
-;
         }
       }
+    }
+  }
+}
+.home-head{
+ @include mxn.flex (center,space-between,0px);
+ @media (max-width:1221px){
+  flex-direction: column;
+  gap: 100px;
+ }
+.head-left{
+  h1{
+    @include mxn.font (Manrope,48px,400,72px,var.$text-white);
+text-align: left;
+max-width: 550px;
+@media (max-width:425px){
+      @include mxn.font (Manrope,28px,400,42px,var.$text-white);
+  width: 280px;
+  text-align: center;
+  margin:  0 auto;
+  padding-bottom: 16px;
+}
+  }
+  p{
+    @include mxn.font (Open Sans,16px,400,28px,var.$text-white);
+max-width: 
+567px;
+@media(max-width:419px){
+  width: 280px;
+  margin: 0 auto;
+  text-align: center;
+}
+  }
+  .head-button-div{
+    padding-top: 40px;
+    @include mxn.flex (center,start,24px);
+    @media (max-width:507px) {
+      flex-direction: column;
+
+    }
+    .head-btn1{
+      @include mxnBtn.butt(var.$bg-green,16px 56px,56px);
+      @include mxn.font (Open Sans,20px,700,28px,var.$bg-black );
+text-align: left;
+    }
+    .head-btn2{
+      @include mxnBtn.butt(none,16px 56px,56px);
+      border: 2px solid rgba(255, 255, 255, 1);
+     @include mxn.font (Open Sans,20px,700,28px,var.$text-white );
+    }
+  }
+}
+.head-right{
+  .img1{
+    @media (max-width:504px){
+    width: 350px;
+    }
+    @media (max-width:370px){
+      width: 280px;
+    }
+  }
+  .imgs{
+    padding-top: 25px;
+    @include mxn.flex (center,space-between,0px);
+    @media (max-width:497px){
+    flex-direction: column;
+    gap: 10px;
+    }
+  }
+} 
+}
+.brands-logo{
+  background-image: url(../../images/home-img/Logos.svg);
+  padding-top: 56px;
+  padding-bottom: 64px;
+  width: 100%;
+
+}
+.bisnes-proekck{
+@include mxn.flex (center,space-between,40px);
+ @media (max-width:1067px) {
+      flex-direction: column;
+    }
+.left-proekck{
+  position: relative;
+  background-position: center;
+  cursor: pointer;
+  .bisnes-man{
+   @media(max-width:568px){
+    width: 280px;
+   }
+  }
+  &:hover{
+    .frame{
+      text-align: center;
+      width: 400px;
+      left: 0px;
+      top: 0px;
+box-shadow: rgba(95, 62, 62, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+@media (max-width:568px){
+  width: 140px;
+}
+
+    }
+
+  }
+  .frame{
+    transition: 1s;
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    position: absolute;
+    top: 230px;
+    left: 126px;
+    @media (max-width:568px){
+      top: 150px;
+      left: 30px;
+    }
+    @media (max-width:400px){
+      display: none;
+    }
+  }
+}
+.right-proekck{
+  h1{
+    @include mxn.font(Manrope,36px,400,56px,var.$text-black);
+    
+    //styleName: Headings/Text XL;
+text-align: left;
+max-width: 493px;
+padding-bottom: 40px;
+ @media (max-width:1067px) {
+      padding-top: 60px;
+    }
+    @media (max-width:568px){
+      padding-top: 200px;
+    }
+  }
+
+  .proekck-flx{
+    @include mxn.flex(center,start,20px);
+    padding-bottom: 20px;
+   
+    p{
+     @include mxn.font ( Open Sans,20px,400,32px,var.$bg-black) ; 
+  text-align: left;
+    }
+
+  }
+  button{
+
+    @include mxnBtn.butt (var.$bg-black,16px 56px,56px);
+    @include mxn.font (Open Sans,20px,700,28px,var.$text-white);
+    transition: 0.5s;
+text-align: left;
+&:hover{
+  box-shadow: inset 0px 60px var.$bg-green;
+}
+
+  }
+  .proekck-flx2{
+    padding: 16px 0px;
+    margin-top: 40px;
+    transition: 1s;
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.08);
+
+    @include mxn.flex(center,start,10px);
+    &:hover{
+background-color: var.$bg-black;
+P{
+  
+  color: var.$text-white;
+}
+    }
+  }
+}
+
+}
+.void-bac{
+  margin-top: 70px;
+  padding: 96px 0px;
+  background-color: var.$bg-black;
+.void{
+  @include mxn.flex(end,space-between,0px);
+  @media(max-width:439px){
+flex-direction: column;
+
+  }
+p{
+  @include mxn.font (Manrope,48px,400,72px,var.$text-white);
+  //styleName: Headings/Text XXL;
+max-width: 716px;
+}
+
+}
+.void-img{
+  @include mxn.flex (center,start,28px);
+  .icon-bac{
+    background-color:var.$text-white;
+    padding: 11px 15px;
+    border-radius: 50%;
+  }
+}
+.prise-div{
+  padding-top: 72px;
+  @include mxn.flex (start,space-between,0px);
+  @media(max-width:1066px){
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.void-prise{
+  background-color: white;
+  border-radius: 12px;
+  p{
+    @include mxn.font( Open Sans,24px, 400,36px,black);
+    width: 
+200px;
+
+    //styleName: Paragraphs/Text M;
+  }
+  .void-img-sd{
+    @include mxn.flex (center,start,16px);
+
+  }
+
+}
+
+}
+.end-img{
+  margin-top: 124px;
+  width: 100%;
+}
+.img-bottom{
+  padding-top: 56px;
+@include mxn.flex(center,space-between, 0px);
+@media(max-width:711px){
+flex-direction: column;
+}
+  h1{
+    @include mxn.font(Manrope,36px,400,56px,black);
+    max-width: 500px;
+  }
+  .end-fla{
+    @include mxn.flex(center,start,20px);
+    padding-top: 20px;
+    P{
+      @include mxn.font(Open Sans, 20px,400,32px,var.$text-black);
+text-align: left;
+border-bottom: 2px solid black
     }
   }
 }
