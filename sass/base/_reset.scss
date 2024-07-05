@@ -31,17 +31,16 @@ input {
 }
 
 @media (max-width: 620px) {
-  nav{
+  nav {
     display: flex;
     flex-direction: column;
   }
 
   @media (max-width: 452px) {
-    .nav-menu{
+    .nav-menu {
       display: flex;
       flex-direction: column;
     }
   }
 }
 // done
-

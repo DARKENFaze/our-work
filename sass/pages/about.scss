@@ -1,4 +1,361 @@
-.sc-one-pg{
-  margin: 0 auto;
-  text-align: center;
+@use "../utils/variables" as var;
+@use "../utils/mixin" as mxn;
+
+.sc-one-pg {
+  background: rgba(10, 38, 64, 1);
+  height: 615px;
+
+  .section-2-texts {
+    p {
+      font-family: Open Sans;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      text-align: center;
+      color: rgba(241, 241, 241, 1);
+      padding-bottom: 14px;
+    }
+    h1 {
+      font-family: Manrope;
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 84px;
+      text-align: center;
+      color: rgba(255, 255, 255, 1);
+      padding-bottom: 32px;
+
+      @media (max-width: 468px) {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 54px;
+      }
+    }
+
+    .last-paragrph {
+      font-family: Open Sans;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+      color: rgba(241, 241, 241, 1);
+      // width: 745.37px;
+    }
+  }
+}
+// done
+
+// sc-4 start
+
+.three-sc-texts {
+  .our__story {
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    color: rgba(119, 119, 119, 1);
+    margin-bottom: 12px;
+  }
+
+  span {
+    font-family: Manrope;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 72px;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .lorem__tt {
+    color: rgba(119, 119, 119, 1);
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    margin-top: 30px;
+  }
+}
+
+// done
+
+// 5
+$gallery-gap: 20px;
+.gallery {
+  position: relative;
+  top: -120px;
+  display: grid;
+  gap: $gallery-gap;
+  padding: $gallery-gap;
+  // background-color: #001f3f;
+
+  .gallery-item {
+    // background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  // Default layout for larger screens
+  grid-template-areas:
+    "item-1 item-3 item-4"
+    "item-2 item-3 item-5";
+
+  .item-1 {
+    grid-area: item-1;
+  }
+  .item-2 {
+    grid-area: item-2;
+  }
+  .item-3 {
+    grid-area: item-3;
+  }
+  .item-4 {
+    grid-area: item-4;
+  }
+  .item-5 {
+    grid-area: item-5;
+  }
+
+  // Adjustments for tablets
+  @media (max-width: 768px) {
+    grid-template-areas:
+      "item-1"
+      "item-3"
+      "item-4"
+      "item-2"
+      "item-5";
+  }
+
+  // Adjustments for mobile devices
+  @media (max-width: 480px) {
+    grid-template-areas:
+      "item-1"
+      "item-3"
+      "item-4"
+      "item-2"
+      "item-5";
+    .gallery-item {
+      margin-bottom: $gallery-gap;
+    }
+  }
+}
+
+// 6
+
+.our__numbers_sc {
+  background: rgba(10, 38, 64, 1);
+  .five-sdsd {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .our-father {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .our__nmb {
+      margin-bottom: 20px;
+
+      p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.25rem; // 20px equivalent
+        font-weight: 400;
+        line-height: 1.6;
+        color: rgba(241, 241, 241, 1);
+      }
+
+      span {
+        font-family: "Manrope", sans-serif;
+        font-size: 3rem; // 48px equivalent
+        font-weight: 400;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
+    .in-numbers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+
+      .cool-ftr__title {
+        flex: 1 1 30%;
+        margin: 10px;
+        text-align: center;
+
+        p.green__numbers {
+          font-size: 2rem; // 32px equivalent
+          color: rgba(79, 233, 164, 1);
+        }
+
+        p.cln__txt {
+          font-size: 1rem; // 16px equivalent
+          color: rgba(241, 241, 241, 1);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .our__numbers_sc {
+    .our-father {
+      .our__nmb {
+        p {
+          font-size: 1rem; // 16px equivalent
+        }
+
+        span {
+          font-size: 2rem; // 32px equivalent
+        }
+      }
+
+      .in-numbers {
+        .cool-ftr__title {
+          flex: 1 1 100%;
+          margin: 10px 0;
+
+          p.green__numbers {
+            font-size: 1.5rem; // 24px equivalent
+          }
+
+          p.cln__txt {
+            font-size: 0.875rem; // 14px equivalent
+          }
+        }
+      }
+    }
+  }
+}
+// done
+
+// 6
+.sct-five {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+
+  .three__text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+
+    .our___txt {
+      font-family: Open Sans;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      text-align: left;
+      color: rgba(119, 119, 119, 1);
+      margin-bottom: 12px;
+    }
+
+    .leader_ship_h1 {
+      @include mxn.font("Manrope", 48px, 400, 72px, var.$text-black);
+      text-align: left;
+      max-width: 842px;
+    }
+
+    .our__tex__lorem {
+      @include mxn.font("Open Sans", 20px, 400, 32px, var.$text-gray);
+      text-align: left;
+      max-width: 799px;
+    }
+  }
+  .three__image {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    span {
+      @include mxn.font("Manrope", 28px, 400, 48px, var.$text-black);
+      font-family: Manrope;
+      text-align: left;
+    }
+
+    p {
+      @include mxn.font("Open Sans", 22px, 400, 32px, var.$text-gray);
+      font-family: Open Sans;
+      text-align: left;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .three__image {
+      display: grid;
+    }
+  }
+}
+// done
+
+// 7
+
+.our_values {
+  background-color: var.$bg-black;
+  .collab {
+    .collab_one_text {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      .our-vls {
+        @include mxn.font("Open Sans", 20px, 400, 32px, var.$text-white);
+        text-align: left;
+      }
+      h1 {
+        @include mxn.font("Manrope", 48px, 400, 72px, var.$text-white);
+        text-align: left;
+      }
+      .clb_paragrph {
+        @include mxn.font("Open Sans", 20px, 400, 32px, var.$text-white);
+        font-family: Open Sans;
+        text-align: left;
+        max-width: 799px;
+      }
+    }
+  }
+  .collab_images {
+    .person__one {
+      display: flex;
+      gap: 50px;
+      align-items: start;
+
+      .person__ttexx {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        span {
+          @include mxn.font("Manrope", 28px, 400, 48px, var.$text-white);
+          text-align: left;
+        }
+        p {
+          @include mxn.font("Open Sans", 20px, 400, 32px, var.$text-white);
+          text-align: left;
+          max-width: 602px;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,126 @@
+$primary-color: #0a2540;
+$secondary-color: #5e60ce;
+$hiring-color: #36c691;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #f9fafb;
+  padding: 40px 20px;
+  text-align: center;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      .logo-icon {
+        font-size: 48px;
+        font-weight: bold;
+        color: $primary-color;
+      }
+
+      .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary-color;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 0;
+        font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        text-align: left;
+        color: rgba(119, 119, 119, 1);
+        width: 300px;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 600px;
+      gap: 50px;
+
+      .column {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        max-width: 100%;
+
+        h3 {
+          font-size: 18px;
+          color: $primary-color;
+          margin-bottom: 10px;
+        }
+
+        a {
+          color: rgba(119, 119, 119, 1);
+          text-decoration: none;
+          display: block;
+          margin-bottom: 5px;
+          font-family: Open Sans;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 32px;
+          text-align: left;
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+
+        .hiring {
+          background-color: $hiring-color;
+          color: white;
+          padding: 2px 8px;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  footer {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .logo {
+        margin-bottom: 0;
+        text-align: left;
+      }
+
+      .links {
+        flex-direction: row;
+
+        .column {
+          margin-bottom: 0;
+          margin-right: 40px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// done
